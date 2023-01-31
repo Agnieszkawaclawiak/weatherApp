@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <title>Weather APP</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+<body onload="defaultScreen()">
+
+
+
+<div class="input">
+    <input type="text" id ="inputValue" class="inputValue" placeholder="Enter a city">
+  
+    <input type="submit" value="Submit" class="button">
+  
+
+</div>
+
+
+<img id="icon" class="icon" src = ""> 
+<div class="display">
+<h1 class="named"></h1>
+<p class="icon"></p>
+<p class="desc"></p>
+<p class="temp"></p>
+<p class="wind"></p>
+</div>
+<button class="inputValuee">
+    <button type="text" id ="inputValuee" class="inputValuee" placeholder="Weather for 5 next days">
+ 
+ 
+<button onclick = "getInfo()" class = "futureButton" id = "futureButton" >Weather for 5 next days</button>
+</div>
+<div class="display">
+    <div class="display">
+        <h1 class="named1"></h1>
+        <p class="icon1"></p>
+        <p class="desc1"></p>
+        <p class="temp1"></p>
+        <p class="wind1"></p>
+        </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  <!-- jQuery -->    <script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="./script.js"></script>
+</body>
+</html>
