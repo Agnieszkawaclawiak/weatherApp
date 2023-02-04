@@ -50,11 +50,11 @@ button.addEventListener('click', function(){
 
 function getInfo(){
     const inputValue = document.getElementById("inputValue");
-    const cityName = document.getElementById("searchHistory");
-cityName.innerHTML = "inputValue.value";
+    const named1 = document.getElementById("searchHistory");
+named1.innerHTML = "inputValue.value";
 
 button1.addEventListener('click', function(){
-fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + inputValue.value +'&units=metric&appid=d663d7baedf7375b51977bacb5848b97')
+fetch('api.openweathermap.org/data/2.5/forecast?q=' + inputValue.value +'&units=metric&appid=d663d7baedf7375b51977bacb5848b97')
 .then(response => response.json())
 .then(data => {
     for(i=0; i<5; i++){
@@ -79,10 +79,10 @@ getInfo();
 const weekday = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
    
 function checkDay(day){
-    if(day +d.getDay() > 6){
-        return day +d.getDay()-7;
+    if(day + d.getDay() > 6){
+        return day + d.getDay()-7;
     }
-    else{ return day +d.getDay();
+    else{ return day + d.getDay();
 
     }
 

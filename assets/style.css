@@ -1,32 +1,41 @@
 *{
-    background-color: blanchedalmond;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-blend-mode:luminosity;
+   
 
 }
 body{
+    background:url('https://images.unsplash.com/photo-1527482797697-8795b05a13fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHdlYXRoZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=1000&q=60');
     font-family: "Nunito,sans-serif";
+    background-repeat: no-repeat;
+    background-size:cover;
+    overflow: hidden;
+    font: verdana;
+   font-size: large;
+   font-weight: 100;
+   color: rgb(240, 248, 255);
 }
 .input .icon{
     text-align: center;
     margin: 100px 0;
 }
 .futureButton{
-    height: 100px;
-    width: 100px;
-    background:#ad90ca;
+    height: 50px;
+    width: 200px;
+    background:#f0f0b9;
     font-family: "nunito,sans serif";
     font-size: 20px;
     border: none;
     font-weight: BOLD;
     border-radius: 2px;   
+    margin: 0px;
+    padding: 10;
+    display: block;
+    box-sizing:content-box;
+    
 }
 input[type="text"]{
-    height: 50px;
-    width: 600px;
-    background: #9b9a9c;
+    height: 20px;
+    width: 200px;
+    background: #f0f0b9;
     font-family: "nunito,sans serif";
     font-size: 20px;
     border: none;
@@ -36,9 +45,9 @@ padding: 10px 10px;
 
 }
 input[type="submit"]{
-    height: 50px;
-    width: 100px;
-    background:#dcbdfb;
+    height: 30px;
+    width: 80px;
+    background:#f0f0b9;
     font-family: "nunito,sans serif";
     font-size: 20px;
     border: none;
@@ -49,4 +58,4 @@ input[type="submit"]{
 
 .display .icon{
 text-align: center;
-}
+
