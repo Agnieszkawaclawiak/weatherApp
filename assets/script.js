@@ -8,18 +8,50 @@ var wind = document.querySelector('.wind');
 var button1 = document.querySelector('.futureButton');
 var newName = document.querySelector('inputValue');
 
-var named1 = document.querySelector('.named1');
-var icon1 = document.querySelector('.icon1');
-var desc1 = document.querySelector('.desc1');
-var temp1 = document.querySelector('.temp1');
-var wind1 = document.querySelector('.wind1');
 
+
+
+
+button.addEventListener('click', function(){
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + inputValue.value  + '&units=metric&appid=d663d7baedf7375b51977bacb5848b97')
+    .then(response => response.json())
+    .then(data => {
+        var namedValue = data['name'];
+        var iconValue = data['weather'][0];
+        var tempValue = data['main']['temp'];
+        var descValue = data['weather'][0]['description'];
+        var windValue = data['wind']['speed'];
+    
+    
+    
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+        
+        today = mm + '/' + dd + '/' + yyyy;
+    
+    
+    
+    icon.innerHTML = iconValue;
+        named.innerHTML = namedValue + ' ' + today;
+        temp.innerHTML = 'Temperature: ' + tempValue + ' degrees Celcius.';
+        desc.innerHTML = 'Description: ' + descValue + '.';
+        wind.innerHTML = 'Wind speed ' + windValue + 'm/s';
+      
+    })
+    
+    
+    
+    .catch(err => alert("Wrong city name"))
+    })
+    //fucction that adds time when submit button is clicked
 
 
 function getInfo(){
     const inputValue = document.getElementById("inputValue");
-    const cityName = documeny.getElementById("searchHistory");
-cityName.innerHTML = "newName.value";
+    const cityName = document.getElementById("searchHistory");
+cityName.innerHTML = "inputValue.value";
 
 button1.addEventListener('click', function(){
 fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + inputValue.value +'&units=metric&appid=d663d7baedf7375b51977bacb5848b97')
@@ -36,7 +68,7 @@ fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + inputValue.value +
 })
 
     .catch(err => alert("Something went wrong"));
-})}
+})};
 
 function defaultScreen(){
   
@@ -55,7 +87,8 @@ function checkDay(day){
     }
 
 }
-for(i=0, i>5, i++){
+
+for(i=0; i>5; i++){
     document.getElementById("day" + (i+1)).innerHTML = weekDay[checkDay(i)];
 
 };
@@ -69,39 +102,5 @@ for(i=0, i>5, i++){
 
 
 
-button.addEventListener('click', function(){
-fetch('https://api.openweathermap.org/data/2.5/weather?q=' + inputValue.value  + '&units=metric&appid=d663d7baedf7375b51977bacb5848b97')
-.then(response => response.json())
-.then(data => {
-    var namedValue = data['name'];
-    var iconValue = data['weather'][0];
-    var tempValue = data['main']['temp'];
-    var descValue = data['weather'][0]['description'];
-    var windValue = data['wind']['speed'];
-
-
-
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = today.getFullYear();
-    
-    today = mm + '/' + dd + '/' + yyyy;
-
-
-
-icon.innerHTML = iconValue;
-    named.innerHTML = namedValue + ' ' + today;
-    temp.innerHTML = 'Temperature: ' + tempValue + ' degrees Celcius.';
-    desc.innerHTML = 'Description: ' + descValue + '.';
-    wind.innerHTML = 'Wind speed ' + windValue + 'm/s';
-  
-})
-
-
-
-.catch(err => alert("Wrong city name"))
-})
-//fucction that adds time when submit button is clicked
 
 
